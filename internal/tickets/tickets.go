@@ -156,11 +156,11 @@ func GetCountByPeriod(time string) (int, error) {
 }
 
 // ejemplo 3
-func GetAverageDestination(destination string, total int) (float64, error) {
+func GetAverageDestination(destination string) (float64, error) {
 	destinationTickets, err := GetTotalTickets(destination)
 	if err != nil {
 		return 0, err
 	}
-	result := float64(destinationTickets) / float64(total)
+	result := float64(destinationTickets) / float64(len(TicketList))
 	return result, nil
 }

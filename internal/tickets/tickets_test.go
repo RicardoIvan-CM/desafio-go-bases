@@ -107,11 +107,10 @@ func TestAverageDestination(t *testing.T) {
 	t.Run("Brazil", func(t *testing.T) {
 		//Arrange
 		var destination string = "Brazil"
-		var total int = 1000
 		var expectedResult float64 = 0.045
 
 		//Act
-		result, err := GetAverageDestination(destination, total)
+		result, err := GetAverageDestination(destination)
 
 		//Assert
 		assert.NoError(t, err, "Existe un error")
@@ -121,11 +120,10 @@ func TestAverageDestination(t *testing.T) {
 	t.Run("Mexico", func(t *testing.T) {
 		//Arrange
 		var destination string = "Mexico"
-		var total int = 1000
 		var expectedResult float64 = 0.011
 
 		//Act
-		result, err := GetAverageDestination(destination, total)
+		result, err := GetAverageDestination(destination)
 
 		//Assert
 		assert.NoError(t, err, "Existe un error")
