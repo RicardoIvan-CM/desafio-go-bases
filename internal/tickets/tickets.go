@@ -20,6 +20,10 @@ var TicketList = []Ticket{}
 func SetTicketList(fileName string) error {
 
 	file, err := os.Open(fileName)
+	defer func() {
+		file.Close()
+	}()
+
 	if err != nil {
 		return err
 	}
