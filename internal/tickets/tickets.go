@@ -18,6 +18,7 @@ type Ticket struct {
 var TicketList = []Ticket{}
 
 func SetTicketList(fileName string) error {
+	var tickets = []Ticket{}
 
 	file, err := os.Open(fileName)
 	defer func() {
@@ -51,7 +52,7 @@ func SetTicketList(fileName string) error {
 			return err
 		}
 
-		TicketList = append(TicketList, Ticket{
+		tickets = append(tickets, Ticket{
 			ID:      id,
 			Nombre:  data[1],
 			Email:   data[2],
@@ -60,6 +61,8 @@ func SetTicketList(fileName string) error {
 			Precio:  precio,
 		})
 	}
+
+	TicketList = tickets
 	return nil
 }
 
